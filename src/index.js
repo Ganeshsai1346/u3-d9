@@ -1,8 +1,20 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import App from './App'
+/** @format */
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
-root.render(<App />)
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+
+// Provider is a component we're taking from react-redux, the bindings library for a React Application!
+// we're going to wrap our main component, App, into it!
+// Provider doesn't affect the visuals of the Application, just enables the Redux Store
